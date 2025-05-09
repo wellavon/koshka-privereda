@@ -26,34 +26,32 @@ body {
     }
 }
 
-/* Убираем лишние отступы */
+/* Общие стили для карточек */
 #search-bar,
 #product-list,
 .modal-content {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white; /* Заменяем полупрозрачный на полностью белый */
     padding: 20px;
-    margin: 15px; /* Уменьшенный отступ */
+    margin: 15px;
 }
 
-header .quote {
-    border-radius: 0px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    margin: 5px; /* Уменьшенный отступ */
-}
-
+/* Стили для хедера */
 header {
     text-align: center;
+    background-color: white; /* Добавляем белый фон для контраста */
+    padding: 10px; /* Добавляем отступ */
+    border-radius: 10px; /* Добавляем немного скругления */
+    margin: 15px; /* Добавляем отступ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-family: 'Lobster Two', cursive; 
+    font-family: 'Lobster Two', cursive;
     font-size: 3em;
     color: #e91e63;
-    margin-bottom: 5px; /* Уменьшенный отступ */
+    margin-bottom: 5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -62,6 +60,8 @@ header .quote {
     font-style: italic;
     color: #757575;
     font-size: 1.2em;
+    padding: 10px;
+    margin: 5px;
 }
 
 /* Поисковая строка */
@@ -70,7 +70,7 @@ header .quote {
 }
 
 #search-input {
-    padding: 12px; /* Уменьшенный отступ */
+    padding: 12px;
     width: 70%;
     border: 2px solid #f06292;
     border-radius: 30px;
@@ -99,9 +99,10 @@ header .quote {
     max-width: 800px;
 }
 
+/* Стили для элементов списка продуктов */
 #products li {
-    padding: 15px; /* Уменьшенный отступ */
-    margin-bottom: 10px; /* Уменьшенный отступ */
+    padding: 15px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,7 +111,9 @@ header .quote {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.7); /* Прозрачный белый фон */
+    background-color: white; /* Заменяем полупрозрачный на полностью белый */
+    /*  Удаляем или заменяем полупрозрачность фона на box-shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #products li:hover {
@@ -118,6 +121,7 @@ header .quote {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Псевдоэлемент для украшения */
 #products li::before {
     content: '';
     position: absolute;
@@ -125,18 +129,22 @@ header .quote {
     left: -20px;
     width: 80px;
     height: 80px;
-    background-image: url('https://i.imgur.com/cK25Q7L.png');
+    background-image: url('https://i.imgur.com/cK25Q7L.png'); /* Убедитесь, что URL правильный! */
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.7;
     transform: rotate(-20deg);
+    z-index: 0; /* Помещаем псевдоэлемент под контент */
 }
 
+/* Стили для текста в списке */
 #products li span:first-child {
     font-size: 1.2em;
     font-weight: 600;
     flex-grow: 1;
-    margin-right: 10px; /* Уменьшенный отступ */
+    margin-right: 10px;
+    position: relative; /* Для z-index */
+    z-index: 1; /* Поднимаем текст над псевдоэлементом */
 }
 
 /* Метки */
